@@ -7,19 +7,15 @@ VLAN是在一个LAN中通过VLAN ID来建立多个VLAN，VLAN ID对应的bit是�
 Port-based VLAN的原理是把连接到一个switch的某几个端口的L2网段组成一个VLAN（直观上讲，就是把这几个ports组成一个mini-switch）。根据端口来划分VLAN，被设定的端口都在同一个VLAN中。例如，一个switch的1、2端口被定义为VLAN A，3、4端口组成VLAN B。
 
 当支持VLAN的switch收到一个frame时：
--	如果这个frame来自非VLAN的环境（frame中无VLAN ID）：
-	o	switch根据srcPort为frame插入一个VLAN ID，形成一个新的frame：desMAC@, srcMAC@, VLANID, data
-	
-- switch根据其“MAC@--port--VLANID”表列出该frame所在的VLAN的所有“MAC@--port--VLANID”行
-
-- 如果是广播：switch会把该frame发送到该VLAN ID对应的所有ports上
-
+-	如果该frame来自非VLAN的环境（frame中无VLANID）：
+	-	srcPort为frame插入对应VLA ID，形成新frame：desMAC, srcMAC, VLANID, data
+-	switch根据其“MAC@--port--VLANID”表列出该frame所在的VLAN的所有“MAC@--port--VLANID”行
+-	如果是广播：switch把该frame发送到该VLAN ID对应的所有port上
 -	如果不是广播：
 	
-	- 如果switch的表中存在desMAC@：switch会把frame发送到desMAC@对应的port上去
+	- 如果switch的表中存在desMAC：switch会把frame发送到desMAC对应的port上去
 
-	-	如果switch的表中不存在desMAC@：switch会把frame广播到该VLAN ID的所有ports上
-	
+	-	如果switch的表中不存在desMAC：switch会把frame广播到该VLAN ID的所有port上
 - 当frame出switch时：
 	
 	-	如果被发送的port连接一个VLAN的device，那么frame不做任何改动
