@@ -1,5 +1,7 @@
 # VLAN
 
+VLAN只有一个作用，在一个L2的网络中逻辑的隔离出多个虚拟的L2网络。
+
 VLAN是在一个LAN中通过VLAN ID来建立多个VLAN，VLAN ID对应的bit是在Ethernet frame的payload的开头12bit，所以VLAN ID的大小是2^12=4096，在同一个L2网段上最多有4094（4096-2）个VLANs。Host虽然L2上连接在一起，但是逻辑上被分在了不同的VLAN上。VLAN中的一个host广播时，只有同一VLAN中的其他host可以收到。它其实就是把一个LAN广播域分成了多个VLAN广播域。在L3层把VLAN等同于L2 LAN对待。
 
 ### Port-based VLAN

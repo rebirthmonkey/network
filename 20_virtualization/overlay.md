@@ -2,6 +2,11 @@
 
 ## 概述
 
+Overlay网络有两个作用：
+
+- 把多个独立的L2或L3网络连接成一个L2或L3网络，在此过程中往往通过更上层的L3或L4协议来连接
+- 在新连接成的L2或L3网络中，逻辑地隔离出多个虚拟的L2或L3网络
+
 Overlay是指2个独立的X层network在一个标准的Y层network之上（Over）形成一个大的X层network。比如VxLAN的overlay就是在L4 UDP之上形成一个L2的overlay。
 
 ### Tunnel
@@ -44,6 +49,8 @@ net1、net2的边缘设备起了个L2 switch的作用，通过tunnel让两个不
 
 ### 简介
 
+把多个L2的网络通过L4 UDP连接，然后再逻辑地分割成多个L2 VxLAN虚拟网络。
+
 VxLAN（Virtual Extensible LAN）是Linux内核本身就支持的一种网络虚似化技术。VxLAN 可以完全在内核态实现上述封装和解封装的工作，构建出Overlay Network。VxLAN 的overlay的设计思想是：在现有的三层网络之上，“覆盖”一层虚拟的、由内核 VxLAN 模块负责维护的二层网络，使得连接在这个 VxLAN 二层网络上的“主机”（虚拟机或者容器都可以）可以像在同一个LAN里那样自由通信。实际上，这些“主机”可能分布在不同的宿主机上，甚至是分布在不同的物理机房里。为了能在二层网络上打通“隧道”，VxLAN 会在宿主机上设置一个特殊的网络设备VTEP作为“隧道”的两端。VTEP的作用是对L2 frame进行封装和解封装。这个工作的执行流程，全部是在内核里完成的（因为 VxLAN 本身就是 Linux 内核中的一个模块）。
 
 VxLAN是一个L4的tunnel协议，它把一个L2的frame封装在一个新的L4 UDP的segment中，从而把两个L2的网络通过公网L4融合，tunnel起到了L2 switch的功能，使这些被封装的frame能在公网的L4中传输，从而实现：
@@ -79,3 +86,8 @@ VTEP包含了两个接口：uplink和downlink。Uplink连接underlay网络（内
 
 ![image-20191228115114696](figures/image-20191228115114696.png)
 
+
+
+## GRE
+
+把多个L2网络通过L3连接，然后再通过GRE包头中的ID逻辑隔离成多个L2虚拟网络。
