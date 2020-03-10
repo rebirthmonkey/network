@@ -1,9 +1,9 @@
 # Linux Device TAP Lab
 
 ## TAP Device Manipulation
-- create a TAP device: `ip tuntap add dev tap1 mode tap`
+- create a TAP device: `ip tuntap add dev tap89 mode tap`
 - attach an IP address: `ip addr add 192.168.88.88/24 dev tap89`
-- listen to port 8888 for all network devices: `nc -l 8888`
+- listen to port 8888 for all network devices: `nc -l -p 8888`
 - open another terminal, establish a session on the port 8888 of `tap89`, and send messages: `nc 192.168.88.88 8888`
 - we can send messages now
 
