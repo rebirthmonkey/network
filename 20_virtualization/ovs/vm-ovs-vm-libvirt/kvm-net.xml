@@ -1,0 +1,8 @@
+<network>
+    <name>kvm-net</name>
+	<forward mode='bridge'/>
+        <bridge name='ovs88'/>
+        <virtualport type='openvswitch'>
+        	<parameters interfaceid='09b11c53-8b5c-4eeb-8f00-d84eaa0aaa4f'/>
+        </virtualport>
+</network>
