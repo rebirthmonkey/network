@@ -7,18 +7,18 @@ sudo apt install openvswitch-common openvswitch-switch
 
 Check OVS services
 ```bash
-ps aux grep openvswitch
-lsmod  grep openvswitch
+ps aux | grep openvswitch
+lsmod | grep openvswitch
 ```
 
 Check all files used by `ovs-vswitchd`
 ```bash
-lsof -p PID
+lsof -p [PID]
 ```
 
 Check all files used by `ovsdb-server`
 ```bash
-lsof -p PID
+lsof -p [PID]
 ```
 
 Check all functions used by ovs-vsctl
