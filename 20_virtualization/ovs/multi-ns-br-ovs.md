@@ -64,8 +64,8 @@ brctl addif r-bridge r-veth1-bis
 ```
 - bind OVS bridge:
 ```bash
-ovs-vsctl add-port ovs-br g-veth1
-ovs-vsctl add-port ovs-br r-veth1
+ovs-vsctl add-port ovs g-veth1
+ovs-vsctl add-port ovs r-veth1
 ```
 - first test:
 ```bash
