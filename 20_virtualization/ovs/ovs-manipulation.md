@@ -29,6 +29,9 @@ strace ovs-vsctl show
 ## Scenario
 ![Working Scenario with OVS](ovs-manipulation.jpg) 
 
+## Start ovsdb
+`/usr/share/openvswitch/scripts/ovs-ctl start`
+
 ## OVS Bridge
 - `ovs-vsctl add-br sw`: add a new OVS bridge 
 - `ovs-vsctl list bridge sw`: lookup
