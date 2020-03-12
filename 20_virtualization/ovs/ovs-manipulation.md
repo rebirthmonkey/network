@@ -57,6 +57,7 @@ Device allocation
 ip link set eth0-1 netns ns1
 ip link set eth0-2 netns ns2
 ip link set eth0-3 netns ns3
+ovs-vsctl add-br sw
 ovs-vsctl add-port sw veth-1
 ovs-vsctl add-port sw veth-2
 ovs-vsctl add-port sw veth-3
