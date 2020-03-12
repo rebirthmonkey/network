@@ -81,7 +81,7 @@ ip netns exec red ip addr del 8.8.8.9/24 dev r-veth0
 - setup the green DHCP namespace with VLAN100: 
 ```bash
 ip netns add g-dhcp
-ovs-vsctl add-port ovs g-tap
+# ovs-vsctl add-port ovs g-tap
 ovs-vsctl set interface g-tap type=internal
 ovs-vsctl set port g-tap tag=100
 ovs-vsctl set port g-veth1 tag=100
@@ -95,7 +95,7 @@ ip netns exec green dhclient g-veth0
 - setup the red DHCP namespace with VLAN200:
 ```bash
 ip netns add r-dhcp
-ovs-vsctl add-port ovs r-tap
+# ovs-vsctl add-port ovs r-tap
 ovs-vsctl set interface r-tap type=internal
 ovs-vsctl set port r-tap tag=200
 ovs-vsctl set port r-veth1 tag=200
