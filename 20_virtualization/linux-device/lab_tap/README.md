@@ -21,3 +21,6 @@ gcc -Wall tap.c -o tapw
 sudo ./tapw
 ```
 - we can see that the `tcpdump` monitors data sent from `tap89`
+
+## Clean
+ip tuntap del dev tap89 mode tap
