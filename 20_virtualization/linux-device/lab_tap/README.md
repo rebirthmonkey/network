@@ -14,7 +14,7 @@
 ip tuntap add dev tap89 mode tap
 ip link set dev tap89 up
 ```
-- open a new terminal and monitor `tap1`: `tcpdump -i tap89 -vv`
+- open a new terminal and monitor `tap89`: `tcpdump -i tap89 -vv`
 - in another terminal, compile and execute the `tap.c` program:
 ```bash
 gcc -Wall tap.c -o tapw
