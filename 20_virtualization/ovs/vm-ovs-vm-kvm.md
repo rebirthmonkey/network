@@ -35,13 +35,13 @@ The script for the configuration is [here](vm-ovs-vm-kvm.sh) and for cleanup is 
 - configure IP address of each VM (login: `root`, password: `root`):
   - VM2:
 ```bash
-ip link set eth1 up
-ip addr add 192.168.88.2/24 dev eth1
+ip link set tap2 up
+ip addr add 192.168.88.2/24 dev tap2
 ```   
   - VM3: 
 ```bash
-ip link set eth2 up
-ip addr add 192.168.88.3/24 dev eth2
+ip link set tap3 up
+ip addr add 192.168.88.3/24 dev tap3
 ```
 
 ## Test
