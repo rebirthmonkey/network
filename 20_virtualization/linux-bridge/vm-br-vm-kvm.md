@@ -35,13 +35,13 @@ The script for the configuration is [here](vm-br-vm-kvm.sh)
 - config IP address of each VM (login: `root`, password): `root`:
   - VM2:
 ```bash
-ip link set tap2 up
-ip addr add 192.168.88.2/24 dev tap2
+ip link set tap2 up # or use eth0 instead of tap2
+ip addr add 192.168.88.2/24 dev tap2 # or use eth0 instead of tap2
 ```   
   - VM3: 
 ```bash
-ip link set tap3 up
-ip addr add 192.168.88.3/24 dev tap3
+ip link set tap3 up # or use eth1 instead of tap3
+ip addr add 192.168.88.3/24 dev tap3 # or use eth1 instead of tap3
 ```
 
 ## Test
