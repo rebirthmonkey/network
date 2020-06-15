@@ -14,7 +14,7 @@ Communication from VM to Internet
 - bind VETH to the bridge: `brctl addif br88 br-tap2`
 - bind physical interface to the bridge: `brctl addif br88 enp0s3`
 
-- create a KVM VM: `qemu XXX`
+- create a KVM VM: `qemu-system-x86_64 -hda debian_wheezy_amd64_standard2.qcow2 -device e1000,netdev=net0,mac=00:11:22:33:44:02 -netdev tap, id=net0, ifname=tap2,script=no,downscript=no -name vm2 -daemonize`
 
 - activate VETH: `ip link set br-tap2 up`
 - activate Linux bridge: `ifconfig br88 up`
@@ -22,8 +22,8 @@ Communication from VM to Internet
 - get an IP address for the bridge: `dhclient br88` 
 
 ## In the VM
-- activate interface *lo*: `XXX`
-- activate interface *tap2*: `XXX`
+- activate interface *lo*: `ip link set lo up`
+- activate interface *tap2*: `ip link set tap2 up`
 - get an IP address for the VETH: `dhclient tap2`
 
 ## Test
