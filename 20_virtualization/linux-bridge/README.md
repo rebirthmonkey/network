@@ -11,6 +11,6 @@
 ## Lab
 - [Namespace-Bridge-Namespace Communication](ns-br-ns.md)
 - [Namespace-Bridge-Internet Communication](ns-br-ext.md)
-- [???Namespace-Bridge-Namespace-Bridge-Internet Communication]()：帮着实现以下
+- [???Namespace-Bridge-Namespace-Bridge-Internet Communication](ns-br-ns-br-ext.md)：帮着实现以下
 - [VM-Bridge-VM Communication](vm-br-vm-kvm.md)
 - [???VM-Bridge-Internet Communication](vm-br-ext.md)
