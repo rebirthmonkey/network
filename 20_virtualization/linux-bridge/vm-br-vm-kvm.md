@@ -30,6 +30,8 @@ qemu-system-x86_64 -hda debian_wheezy_amd64_standard2.qcow2 -device e1000,netdev
 qemu-system-x86_64 -hda debian_wheezy_amd64_standard3.qcow2 -device e1000,netdev=net0,mac=00:11:22:33:44:03 -netdev tap,id=net0,ifname=tap3,script=no,downscript=no -name vm3 -daemonize
 ```
 
+The `debian_wheezy_amd64_standard.qcow2` can be founded here `https://people.debian.org/~aurel32/qemu/amd64/`
+
 The script for the configuration is [here](vm-br-vm-kvm.sh)
 
 - config IP address of each VM (login: `root`, password): `root`:
