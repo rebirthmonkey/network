@@ -36,3 +36,14 @@ ovs-vsctl show
 ```
 - no traffic through `eth0`: `tcpdump -i eth0 icmp`
 - ICMP traffic through `vnet0`: `tcpdump -i vnet0 icmp`
+
+## Debug
+- please try to read the content of the 2 `.xml` files, adjustments may be needed for adapting your `vms`, here can be an exemple for `kvm-vm2.xml`:
+```bash
+        <disk type='file' device='disk'>
+            <driver name='qemu' type='qcow2'/>
+            <source file='debian_wheezy_amd64_standard2.qcow2'/>
+            <target dev='hda' bus='ide'/>
+            <address type='drive' controller='0' bus='0' target='0' unit='0'/>
+        </disk>
+```
