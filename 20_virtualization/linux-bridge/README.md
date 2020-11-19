@@ -11,6 +11,5 @@
 ## Lab
 - [Namespace-Bridge-Namespace Communication](ns-br-ns.md)
 - [Namespace-Bridge-Internet Communication](ns-br-ext.md)
-- [???Namespace-Bridge-Namespace-Bridge-Internet Communication](ns-br-ns-br-ext.md)：帮着实现以下
-- [VM-Bridge-VM Communication](vm-br-vm-kvm.md)
-- [???VM-Bridge-Internet Communication](vm-br-ext.md)
+- [Namespace-Bridge-Namespace-Bridge-Internet Communication](ns-br-ns-br-ext.md)：帮着实现以下
+- [VM-Bridge-VM Communication](vm-br-vm-kvm.md)：可能会出现ns2和ns3互相ping通，且ns3能ping 8.8.8.8，但是ns2不能直接ping 8.8.8.8的情况
