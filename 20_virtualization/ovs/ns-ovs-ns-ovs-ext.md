@@ -1,4 +1,4 @@
-# ???Namespace-OVS-Namespace-OVS-Internet Communication
+# Namespace-OVS-Namespace-OVS-Internet Communication
 Communication between 2 Namespaces and connect to the Internet
 
 ## Topology
